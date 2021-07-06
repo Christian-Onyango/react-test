@@ -46,6 +46,8 @@ We expect the data to be loaded asynchronously on demand, rather than all at onc
 
 We also expect you to use modern css and html. The resulting should be responsive and accessible (through semantics and aria).
 
+Finally, we expect your submission to be in js/jsx, not Typescript because we hate typescript.
+
 ### System requirements
 This test can probably be performed on any system with Docker installed.
 
