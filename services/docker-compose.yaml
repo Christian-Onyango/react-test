@@ -1,0 +1,45 @@
+version: "3.3"
+services:
+  people:
+    image: bryandollery/node-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:80"
+    volumes:
+      - ./people/:/code/
+    working_dir: /code
+    environment:
+      - EXPOSED_PORT=9000
+      - PORT=80
+      - ENV=dev
+  presence:
+    image: bryandollery/node-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9010:80"
+    volumes:
+      - ./presence/:/code/
+    working_dir: /code
+    environment:
+      - EXPOSED_PORT=9010
+      - PORT=80
+      - ENV=dev
+  messages:
+    image: bryandollery/node-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9020:80"
+    volumes:
+      - ./messages/:/code/
+    working_dir: /code
+    environment:
+      - EXPOSED_PORT=9200
+      - PORT=80
+      - ENV=dev
+    

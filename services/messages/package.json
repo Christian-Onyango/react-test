@@ -1,0 +1,17 @@
+{
+    "name": "messages",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/service.js",
+    "scripts": {
+        "run": "node src/service.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-pino-logger": "^6.0.0",
+        "http-status-codes": "^2.1.4",
+        "pino": "^6.11.3"
+    }
+}
