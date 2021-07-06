@@ -42,6 +42,8 @@ You are to spend no more than 1-hour on this task.
 ### Expectations
 We expect you to use modern React, with hooks, fat-arrow functions rather than classes, and object destructuring. We also expect you to use JSS as the css generator -- let us know if you are already familiar with this library, if you're not then all the better because we'd like to see how you react to being forced to use an unfamiliar library.
 
+We expect the data to be loaded asynchronously on demand, rather than all at once. We appreciate that the sample dataset is small, but you should pretend that it is large and filterable/pageable (even though it clearly isn't right now).
+
 We also expect you to use modern css and html. The resulting should be responsive and accessible (through semantics and aria).
 
 ### System requirements
