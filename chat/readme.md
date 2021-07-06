@@ -63,3 +63,6 @@ If you're not familiar with docker and its causing you problems, then you really
 
 ### Comprehension
 If any of this doesn't make a lot of sense to you then sorry, you're probably not the sort of person we are looking for. You have fallen at the first hurdle and failed the test. Thanks for taking the time to apply and good luck in your next role. We are hiring contractors, not permies, and learning on the job is not an option for us -- you must already be up to speed.
+
+### Submission
+Just send us your github repo name. BitBucket is an instant fail, it must be github and it must be a public project.
