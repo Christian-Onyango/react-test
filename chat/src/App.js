@@ -1,11 +1,13 @@
 import Chat from "./Chat"
 
-const App = () => {
+
+function App() {
   return (
     <div className="App">
-      <Chat />
+      <Chat/>
     </div>
   );
-};
+
+}
 
 export default App;

@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+}
+
+.people-container {
+  width: 30%;
+  max-width: 250px;
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+}
+.people-container .listitem {
+  border-bottom: 1px solid #ccc;
+}
+.people-container .listitem button {
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+}
+.people-container .listitem button .profile {
+  width: 25px;
+  height: 25px;
+  background: #E5DDD5;
+  border-radius: 100%;
+  display: inline-block;
+  margin-right: 1rem;
+}
+.people-container .listitem button .profile .active {
+  background: green;
+}
+.people-container .listitem button:hover {
+  background: #ccc;
+}
+.people-container .listitem button.active {
+  background: #ccc;
+}
+
+.message-container {
+  flex: 1;
+  background: #E5DDD5;
+  padding: 1rem;
+}
+.message-container .listitem {
+  margin-bottom: 1.5rem;
+}
+.message-container .listitem span {
+  padding: 0.75rem;
+  display: inline-block;
+  background: #FFFFFF;
+  min-width: 200px;
+  border-radius: 8px;
+  box-shadow: 1px 2px 3px #ccc;
+}
+.message-container .listitem.right {
+  text-align: right;
+}
+.message-container .listitem.right span {
+  text-align: left;
+  background: #DCF8C6;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  appearance: none;
+  webkit-appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
