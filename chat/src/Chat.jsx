@@ -18,6 +18,8 @@ const getPresence = async() => {
 }
 useEffect(() => {
     getPresence()
+    getPeople()
+    getMessage()
   }, [])
 
   //loop through presence data
@@ -33,9 +35,6 @@ useEffect(() => {
     if(response && response.data.people)
     setPeople(response.data.people)
   }
-  useEffect(() => {
-    getPeople()
-  }, [])
 
   //people
 const People = () => {
@@ -61,9 +60,6 @@ const getMessage = async () => {
   if(response && response.data.conversations)
   setMessages(response.data.conversations)
 }
- useEffect(() => {
-    getMessage()
-  }, [])
 //messages func
 const [conversation, setConversation] = useState([]);
 
