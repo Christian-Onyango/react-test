@@ -9,6 +9,10 @@ body {
 
 .App {
   height: 100%;
+}
+
+.chat {
+  height: 100%;
   display: flex;
 }
 
@@ -32,7 +36,6 @@ body {
 .people-container .listitem button .profile {
   width: 25px;
   height: 25px;
-  background: #E5DDD5;
   border-radius: 100%;
   display: inline-block;
   margin-right: 1rem;
@@ -83,4 +86,38 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+}
+.from {
+  font-size: 10px;
+  margin-bottom: 3px;
+}
+
+.time {
+  font-size: 8.5px;
+  margin-top: 8px;
+  right: 0;
+}
+
+.header {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background: #EEEEEE;
+  box-shadow: 0px 1px 2px #ccc;
+  z-index: 9999;
+}
+
+.profile {
+  background: #E5DDD5;
+}
+.profile.available {
+  background: green;
+}
+.profile.offline {
+  background: red;
+}
+.profile.away {
+  background: amber;
 }

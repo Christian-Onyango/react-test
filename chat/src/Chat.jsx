@@ -7,6 +7,24 @@ import './App.css'
 const Chat = () => {
     const [people, setPeople] = useState([])
     const [messages, setMessages] = useState([])
+    const [presence, setPresence] = useState([])
+
+    //PRESENCE
+const getPresence = async() => {
+  const availability = await axios.get('http://localhost:9010/presence').catch((err) => console.log(`Error: ${err}`))
+  console.log('Presence', availability.data)
+  if(availability && availability.data.people)
+  setPresence(availability.data.people)
+}
+useEffect(() => {
+    getPresence()
+  }, [])
+
+  //loop through presence data
+  let getAvailability = (id) => {
+    let user_status = presence.filter(current => current.personId == id)
+    return user_status[0].presence.status
+  }
 
   //PEOPLE
   const getPeople = async () => {
@@ -22,9 +40,9 @@ const Chat = () => {
   //people
 const People = () => {
     const wazito = people.map((p) => {
-      return <li key={p.id} className="listitem"><button onClick={() => updateConversation(p.id)}>
-        <span className="profile"></span> <span>{p.name}</span>
- </button></li>
+       return <li key={p.id} className="listitem"><button onClick={() => updateConversation(p.id)}>
+        <span className={`profile ${getAvailability(p.id)}`}></span> <span>{p.name}</span>
+        </button></li>;
     });
     return (
       <>
@@ -57,10 +75,14 @@ const [conversation, setConversation] = useState([]);
   }
 
   let Messages = () => {
-    if(conversation.length <= 0) return 'Unavailable'
+    if(conversation.length <= 0) return (<div></div>)
     const convos = conversation.messages.map((c, idx) => {
       let rightClass = c.from == conversation.people[1] ? 'right': '';
-      return <li key={idx} className={`listitem ${rightClass}`}><span>{c.body}</span></li>;
+      return <li key={idx} className={`listitem ${rightClass}`}><span>
+        <div className="from">{c.from}</div>
+        <em>{c.body}</em>
+        <div className="time">{c.time.replace("T", " ")}</div>
+        </span></li>;
     });
     return (
       <>
@@ -72,8 +94,12 @@ const [conversation, setConversation] = useState([]);
   }
   return (
     <>
-        <People />
+    <div className="header">React Test</div>
+      <div className="chat">
+         <People />
         <Messages />
+      </div>
+      
         </>
 
   );
